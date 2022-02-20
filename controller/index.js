@@ -1,5 +1,6 @@
-const { getPhrases } = require('./Phrase');
+const { getPhrases, getPhrasesById } = require('./Phrase');
 
 module.exports = {
   getPhrases,
+  getPhrasesById
 };

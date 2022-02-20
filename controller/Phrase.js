@@ -1,10 +1,18 @@
-const { readFile } = require('fs/promises');
 const generateRandomId = require('../utils/randomId');
+const getPhrasesFromJson = require('../utils/getPhrasesFromJson');
 
-const getPhrases = async (req, res, next) => {
+/**
+ * Retorna uma frase aleatória
+ * @returns {{
+ *  id: Integer
+ *  phrase: String
+ *  thumbnail: String
+ * }}
+ */
+
+const getPhrases = async (_req, res, next) => {
   try {
-    const phrases = await readFile('./assets/phrases.json', 'utf-8')
-      .then((phrases) => JSON.parse(phrases));
+    const phrases = await getPhrasesFromJson();
   
     const phrasesLength = phrases.length;
     const randomId = generateRandomId(phrasesLength);
@@ -15,6 +23,28 @@ const getPhrases = async (req, res, next) => {
   };
 };
 
+/**
+ * Retorna frase pesquisada pelo id
+ * @returns {{
+ *  id: Integer
+ *  phrase: String
+ *  thumbnail: String
+ * }}
+ */
+
+const getPhrasesById = async (req, res, next) => {
+  try {
+    const phrases = await getPhrasesFromJson();
+    
+    const { id } = req.params;
+
+    return res.status(200).json(phrases[id]);
+  } catch (err) {
+    next(err);
+  };
+};
+
 module.exports = {
   getPhrases,
+  getPhrasesById
 };

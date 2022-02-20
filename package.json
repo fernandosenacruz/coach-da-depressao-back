@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/fernandosenacruz/coach-da-depressao#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3"
   },
