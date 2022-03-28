@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use(cors());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const constrollers = require('./controller');
 const middlewares = require('./middleware');
