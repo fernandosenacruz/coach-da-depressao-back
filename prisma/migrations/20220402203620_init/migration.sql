@@ -3,8 +3,8 @@ CREATE TABLE `Post` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
-    `title` VARCHAR(255) NOT NULL,
-    `content` VARCHAR(191) NULL,
+    `content` VARCHAR(191) NOT NULL,
+    `thumbnail` VARCHAR(191) NULL,
     `published` BOOLEAN NOT NULL DEFAULT false,
     `authorId` INTEGER NOT NULL,
 

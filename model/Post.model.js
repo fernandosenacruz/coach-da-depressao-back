@@ -12,6 +12,15 @@ const createPost = async (post) => {
   return newPost;
 };
 
+const createManyPosts = async (posts) => {
+  const newPosts = await prisma.post.createMany({
+    data: posts,
+    skipDuplicates: true,
+  });
+
+  return newPosts;
+};
+
 const getPostByContent = async (content) => {
   const post = await prisma.post.findFirst({
     where: {
@@ -23,5 +32,6 @@ const getPostByContent = async (content) => {
 
 module.exports = {
   createPost,
+  createManyPosts,
   getPostByContent,
 };
