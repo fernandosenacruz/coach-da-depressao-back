@@ -1,9 +1,11 @@
 const { error } = require('./errorMiddleware');
 const { validationId } = require('./validations');
-const validationNewUser = require('./validateNewUser');
+const validateNewUser = require('./validateNewUser');
+const validateNewPost = require('./validateNewPost');
 
 module.exports = {
   error,
   validationId,
-  validationNewUser,
+  validateNewUser,
+  validateNewPost,
 };

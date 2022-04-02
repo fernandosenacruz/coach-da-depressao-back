@@ -4,6 +4,7 @@ const randomId = require('./utils/randomId');
 const constrollers = require('./controller');
 const middlewares = require('./middleware');
 const user = require('./route/user');
+const post = require('./route/post');
 
 const PORT = process.env.PORT || 3001;
 
@@ -18,6 +19,8 @@ app.get('/', constrollers.getPhrases);
 app.get('/phrases/:id', middlewares.validationId, constrollers.getPhrasesById);
 
 app.use('/user', user);
+
+app.use('/post', post);
 
 app.use(middlewares.error);
 

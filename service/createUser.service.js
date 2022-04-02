@@ -15,3 +15,12 @@ const { getUserByName, listUsers } = require('../model/User.model');
 //     });
 //   });
 // };
+
+const getUserByName = async function getUserByName() {};
+
+const listUsers = async function listUsers() {};
+
+module.exports = {
+  getUserByName,
+  listUsers,
+};
